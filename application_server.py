@@ -18,7 +18,12 @@ def index():
     """
     Root endpoint
     """
-    return b"This is a test!", 200, {"Content-Type": "text/plain"}
+    lines = [
+        b"This is a test!",
+        b"If you can read this, Flask is successfully serving a WSGI application through Passenger.",
+        b"This means you are awesome; congratulations!"
+    ]
+    return b"\n".join(lines), 200, {"Content-Type": "text/plain"}
 
 def main():
     """
